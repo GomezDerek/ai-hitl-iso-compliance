@@ -21,7 +21,9 @@ export default function ReasoningModal({ complianceDetails, onClickProp }: Props
             <div className="pop-up-modal" id="reasoning-modal">
                 <button className="x-button" onClick={onClickProp}>x</button>
                 <h2>{`${complianceDetails.iso} Compliance Details`}</h2>
-                <p>{complianceDetails.reasoning}</p>
+                <div className="reasoning-container">
+                    <p>{complianceDetails.reasoning}</p>
+                </div>
             </div>
         </>
     )

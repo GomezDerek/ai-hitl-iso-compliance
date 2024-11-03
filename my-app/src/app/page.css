@@ -250,6 +250,8 @@ ul.file-list li:last-child {
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
 
+    max-width: 65vw;
+
     padding: 2.5rem;
     border-radius: 6px;
     background: white;
@@ -284,6 +286,15 @@ ul.file-list li:last-child {
 /* #upload-modal h2{ */
 .pop-up-modal h2 {
     margin-bottom: 2rem;
+}
+
+.reasoning-container {
+    overflow-y: scroll;
+    max-height: 60vh;
+    padding: 0.8rem;
+
+    border-radius: 6px;
+    border: 1.5px solid var(--border-gray);
 }
 
 .p2 {
@@ -332,6 +343,14 @@ ul.file-list li:last-child {
     cursor: default;
     color: var(--green);
     text-decoration: underline;
+    transition: 0.3s ease transform; 
+    -webkit-transition: 0.3s ease -webkit-transform; 
+}
+
+.see-more-compliance:hover {
+    color: var(--green2);
+    transform: scale(1.08);
+    -webkit-transform: scale(1.08);
 }
 
 #compliance-table {
