@@ -7,6 +7,8 @@ interface SelectedRow {
     "reasoning": string,
 }
 
+
+
 export default function ComplianceTable() {
     const[modalOpen, setModalOpen] = useState<boolean>(false);
     const[selectedRow, setSelectedRow] = useState<SelectedRow>({iso: "", compliance: "", reasoning: ""});
@@ -14,6 +16,10 @@ export default function ComplianceTable() {
     function seeMoreOnClick(iso: string, compliance: string, reasoning: string) {
         setModalOpen(true);
         setSelectedRow({"iso": iso, "compliance": compliance, "reasoning": reasoning});
+    }
+
+    function truncateReasoning(str: string) {
+        return str.length > 55 ? str.substring(0, 55) + "..." : str;
     }
 
     return (
@@ -35,9 +41,9 @@ export default function ComplianceTable() {
                     <td>ISO xy.z</td>
                     <td>partially compliant</td>
                     <td>
-                        <span>{`Corpus_file_2 Section 4B violates ISO xy.z Article 16...`}</span>
+                        <span>{truncateReasoning(`Corpus_file_2 Section 4B violates ISO xy.z Article 16, it is stated that in order to`)}</span>
                         <span className="see-more-compliance" 
-                            onClick={()=>seeMoreOnClick("xy.z", "partially compliant", "Corpus_file_2 Section 4B violates ISO xy.z Article 16...")}>
+                            onClick={()=>seeMoreOnClick("xy.z", "partially compliant", "Corpus_file_2 Section 4B violates ISO xy.z Article 16, It is stated that in order to")}>
                             see more
                         </span>
                     </td>
@@ -46,9 +52,9 @@ export default function ComplianceTable() {
                     <td>ISO xy.z</td>
                     <td>partially compliant</td>
                     <td>
-                        <span>{`Corpus_file_2 Section 4B violates ISO xy.z Article 16...`}</span>
+                        <span>{truncateReasoning(`Corpus_file_2 Section 4B violates ISO xy.z Article 16, it is stated that in order to`)}</span>
                         <span className="see-more-compliance" 
-                            onClick={()=>seeMoreOnClick("xy.z", "partially compliant", "Corpus_file_2 Section 4B violates ISO xy.z Article 16...")}>
+                            onClick={()=>seeMoreOnClick("xy.z", "partially compliant", "Corpus_file_2 Section 4B violates ISO xy.z Article 16, It is stated that in order to")}>
                             see more
                         </span>
                     </td>
@@ -57,9 +63,9 @@ export default function ComplianceTable() {
                     <td>ISO xy.z</td>
                     <td>partially compliant</td>
                     <td>
-                        <span>{`Corpus_file_2 Section 4B violates ISO xy.z Article 16...`}</span>
+                        <span>{truncateReasoning(`Corpus_file_2 Section 4B violates ISO xy.z Article 16, it is stated that in order to`)}</span>
                         <span className="see-more-compliance" 
-                            onClick={()=>seeMoreOnClick("xy.z", "partially compliant", "Corpus_file_2 Section 4B violates ISO xy.z Article 16...")}>
+                            onClick={()=>seeMoreOnClick("xy.z", "partially compliant", "Corpus_file_2 Section 4B violates ISO xy.z Article 16, It is stated that in order to")}>
                             see more
                         </span>
                     </td>
@@ -68,13 +74,14 @@ export default function ComplianceTable() {
                     <td>ISO xy.z</td>
                     <td>partially compliant</td>
                     <td>
-                        <span>{`Corpus_file_2 Section 4B violates ISO xy.z Article 16...`}</span>
+                        <span>{truncateReasoning(`Corpus_file_2 Section 4B violates ISO xy.z Article 16, it is stated that in order to`)}</span>
                         <span className="see-more-compliance" 
-                            onClick={()=>seeMoreOnClick("xy.z", "partially compliant", "Corpus_file_2 Section 4B violates ISO xy.z Article 16...")}>
+                            onClick={()=>seeMoreOnClick("xy.z", "partially compliant", "Corpus_file_2 Section 4B violates ISO xy.z Article 16, It is stated that in order to")}>
                             see more
                         </span>
                     </td>
                 </tr>
+
                 </tbody>
             </table>
         </>
