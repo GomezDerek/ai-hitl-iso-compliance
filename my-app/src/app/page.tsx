@@ -4,7 +4,7 @@ import './page.css'
 export default function Home() {
   return (
     // <div className={styles.page}>
-    <div className="page">
+    <div id="page">
       
         <header>
           <h1 id="title">ComPro</h1>
@@ -26,7 +26,7 @@ export default function Home() {
             <li>ISO_file_2.pdf</li>
           </ul>
 
-          <div className="file-section-header">
+          <div className="file-section-header" id="corpus-files">
             <p>Corpus files</p>
             <button className="primary">+</button>
           </div>
