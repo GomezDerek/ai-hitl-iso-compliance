@@ -52,7 +52,7 @@ export default function UploadModal({ onClickProp, fileType }: UploadModalProps)
     return (
         <>
             <div className="opacity-screen" onClick={onClickProp}></div>
-            <div id="upload-modal">
+            <div id="upload-modal" className="pop-up-modal">
                 <button className="x-button" onClick={onClickProp}>x</button>
                 <h2>{`Upload your ${fileType} files`}</h2>
                 {/* <p className="p2">We'll sort them for you</p> */}
