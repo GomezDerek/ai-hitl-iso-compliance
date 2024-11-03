@@ -2,6 +2,7 @@
 import './page.css';
 import File from './file';
 import React, { useState } from 'react';
+import UploadModal from './uploadModal';
 
 export default function Home() {
   
@@ -11,10 +12,19 @@ export default function Home() {
   const[corpusFiles, setCorpusFiles] = useState<string[]>(["Corpus_file_1.pdf", "Corpus_file_2.pdf"]);
   // eslint-disable-next-line
   const[selectedCorpus, setSelectedCorpus] = useState<string[]>([])
+  const[isUploading, setIsUploading] = useState<boolean>(true);
+  const[uploadFileType, setUploadFileType] = useState<string>("");
+
+  function addFilesOnClick(fileType: string) {
+    setIsUploading(true);
+    setUploadFileType(fileType);
+  }
 
   return (
     // <div className={styles.page}>
     <div id="page">
+
+        { isUploading ? <UploadModal fileType={uploadFileType} onClickProp={()=>setIsUploading(false)}/> : null }
       
         <header>
           <h1 id="title">ComPro</h1>
@@ -22,14 +32,13 @@ export default function Home() {
           <p>by Sahil, Jeff, Andres, Derek</p>
         </header>
  
-      {/* <main className={styles.main}> */}
       <main>
         
         <section id="left-panel">
           
           <div className="file-section-header">
             <p>ISO files</p>
-            <button className="primary">+</button>
+            <button className="primary" onClick={()=>addFilesOnClick("ISO")}>+</button>
           </div>
           <ul className="file-list" id="iso-file-list">
             { isoFiles.map( (fileName, i) => <File name={fileName} key={i}/>) }
@@ -37,7 +46,7 @@ export default function Home() {
 
           <div className="file-section-header" id="corpus-files">
             <p>Corpus files</p>
-            <button className="primary">+</button>
+            <button className="primary" onClick={()=>addFilesOnClick("Corpus")}>+</button>
           </div>
           <ul className="file-list">
           { corpusFiles.map( (fileName, i) => <File name={fileName} key={i}/>) }
