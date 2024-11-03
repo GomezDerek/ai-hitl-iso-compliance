@@ -2,7 +2,7 @@
 import React, {useState} from 'react';
 
 interface ActionPanelProps {
-  appStageProp: number;
+  appStage: number;
 }
 
 const stage0 = (
@@ -15,7 +15,18 @@ const stage0 = (
 );
 
 export default function ActionPanel(props: ActionPanelProps)  {    
-  const[panelJSX, setPanelJSX] = useState(stage0);
+  const[panelJSX, setPanelJSX] = useState<number>(0);
+  
+  switch(props.appStage) {
+    case 0:
+      setPanelJSX(0);
+    case 1:
+      setPanelJSX(1);
+    case 2:
+      setPanelJSX(2);
+    default:
+      setPanelJSX(0);
+  }
 
   return(
         panelJSX

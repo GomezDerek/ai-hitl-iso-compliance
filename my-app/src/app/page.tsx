@@ -56,7 +56,7 @@ export default function Home() {
         
         </section>
 
-        <ActionPanel appStageProp={appStage}/>
+        <ActionPanel appStage={appStage}/>
 
       </main>
 
