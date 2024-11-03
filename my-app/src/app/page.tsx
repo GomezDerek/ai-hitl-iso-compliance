@@ -15,6 +15,7 @@ export default function Home() {
   const[selectedCorpus, setSelectedCorpus] = useState<string[]>([])
   const[isUploading, setIsUploading] = useState<boolean>(false);
   const[uploadFileType, setUploadFileType] = useState<string>("");
+  // eslint-disable-next-line
   const[appStage, setAppStage] = useState<number>(0);
 
   function addFilesOnClick(fileType: string) {
