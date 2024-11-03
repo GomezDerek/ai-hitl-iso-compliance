@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import ReasoningModal from './reasoningModal';
 
+// eslint-disable-next-line
 interface SelectedRow {
     "iso": string,
     "compliance": string,
@@ -10,13 +11,6 @@ interface SelectedRow {
 export default function ComplianceTable() {
     const[modalOpen, setModalOpen] = useState<boolean>(false);
     const[selectedRow, setSelectedRow] = useState({iso: "", compliance: "", reasoning: ""});
-    
-    // killing the ts linting error
-    function fake() {
-        let x = selectedRow;
-        return x;        
-    }
-    fake();
     
     function seeMoreOnClick(iso: string, compliance: string, reasoning: string) {
         setModalOpen(true);
