@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import ReasoningModal from './reasoningModal';
 
-// eslint-disable-next-line
 interface SelectedRow {
     "iso": string,
     "compliance": string,
@@ -10,7 +9,7 @@ interface SelectedRow {
 
 export default function ComplianceTable() {
     const[modalOpen, setModalOpen] = useState<boolean>(false);
-    const[selectedRow, setSelectedRow] = useState({iso: "", compliance: "", reasoning: ""});
+    const[selectedRow, setSelectedRow] = useState<SelectedRow>({iso: "", compliance: "", reasoning: ""});
     
     function seeMoreOnClick(iso: string, compliance: string, reasoning: string) {
         setModalOpen(true);
