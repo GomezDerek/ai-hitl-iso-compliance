@@ -3,23 +3,41 @@ import React, {useState, useEffect} from 'react';
 
 interface ActionPanelProps {
   appStage: number;
+  // stage0OnClick: ()=>void,
 }
 
-const stage0 = (
-  <section className="right-panel">
-    <h2>Is your business ISO compliant?</h2>
-    <h4>Ensure your corpus files are in compliance with ISO's!</h4>
-    <p>Get started by uploading your corpus files and copies of the ISO regulations you need to comply with</p>
-    <button className="primary" onClick={()=>alert("Summon the AI agents")}>Check Compliance</button>
-  </section>
-);
-
-const stage1 = (<></>);
-const stage2 = (<></>);
-
 export default function ActionPanel(props: ActionPanelProps)  {    
-  const[panelJSX, setPanelJSX] = useState(stage0);
+  const[panelJSX, setPanelJSX] = useState((<></>));
   
+  function stage0OnClick(): void {
+    // alert("Summon the AI agents");
+    setPanelJSX(stage1)
+  }
+  
+  const stage0 = (
+    <section className="right-panel">
+      <h2>Is your business ISO compliant?</h2>
+      <h4>Ensure your corpus files are in compliance with ISO's!</h4>
+      <p>Get started by uploading your corpus files and copies of the ISO regulations you need to comply with</p>
+      <button className="primary" onClick={stage0OnClick}>Check Compliance</button>
+    </section>
+  );
+  
+  const stage1 = (
+    <section className="right-panel">
+      <h2>ActionPanel stage1</h2>
+      <button onClick={()=>setPanelJSX(stage0)}>{`<- Stage 0`}</button>
+      <button onClick={()=>setPanelJSX(stage2)}>{`Stage 2 ->`}</button>
+    </section>
+  );
+
+  const stage2 = (
+    <section className="right-panel">
+      <h2>ActionPanel stage2</h2>
+      <button onClick={()=>setPanelJSX(stage1)}>{`<- Stage 1`}</button>
+    </section>
+  );
+
   useEffect(()=>{
     switch(props.appStage) {
       case 0:
