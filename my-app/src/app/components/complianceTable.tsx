@@ -15,27 +15,27 @@ export default function ComplianceTable() {
                 </thead>
                 <tbody>
                 {/*dynamically render the rows from LLM API response*/}
-                <tr>
+                <tr className="tbody-rows">
                     <td>ISO xy.z</td>
                     <td>partially compliant</td>
                     <td>
-                        {`Corpus_file_2 Section 4B violates ISO xy.z Article 16 `}
+                        <span>{`Corpus_file_2 Section 4B violates ISO xy.z Article 16...`}</span>
                         <span className="see-more-compliance">see more</span>
                     </td>
                 </tr>
-                <tr>
+                <tr className="tbody-rows">
                     <td>ISO xy.z</td>
                     <td>partially compliant</td>
                     <td>
-                        {`Corpus_file_2 Section 4B violates ISO xy.z Article 16 `}
+                        <span>{`Corpus_file_2 Section 4B violates ISO xy.z Article 16...`}</span>
                         <span className="see-more-compliance">see more</span>
                     </td>
                 </tr>
-                <tr>
+                <tr className="tbody-rows">
                     <td>ISO xy.z</td>
                     <td>partially compliant</td>
                     <td>
-                        {`Corpus_file_2 Section 4B violates ISO xy.z Article 16 `}
+                        <span>{`Corpus_file_2 Section 4B violates ISO xy.z Article 16...`}</span>
                         <span className="see-more-compliance">see more</span>
                     </td>
                 </tr>

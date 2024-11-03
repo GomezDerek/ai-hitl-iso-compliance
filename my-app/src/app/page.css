@@ -328,3 +328,53 @@ ul.file-list li:last-child {
     color: var(--green);
     text-decoration: underline;
 }
+
+#compliance-table {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+/* styling the headers */
+#compliance-table > thead th {
+    border-bottom: solid 1.5px var(--border-gray);
+}
+
+/* #compliance-table > thead th:last-child {
+    border: none;
+} */
+
+/* hover interaction for the rows */
+.tbody-rows:hover {
+    background-color: var(--white-hover);
+}
+
+/* spacing for the cells */
+#compliance-table td {
+    --y-pad: 0.3rem;
+    padding-top: var(--y-pad);
+    padding-bottom: var(--y-pad);
+}
+
+#compliance-table tbody tr:first-child > td {
+    padding-top: 1rem;
+}
+
+/* reasoning cells */
+.tbody-rows td:nth-child(3) {
+    /* background-color: yellow; */
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding-right: 2rem;
+}
+
+/* turn this on for debugging */
+/* #compliance-table td {
+    border: 1px solid black;
+} */
+
+/* .tbody-rows td:nth-child(3) span {
+    border: 1px solid black;
+} */
