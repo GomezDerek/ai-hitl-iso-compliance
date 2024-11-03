@@ -10,7 +10,7 @@ export default function ComplianceTable() {
                         <th>ISO</th>
                         <th>Compliance</th>
                         <th>Reasoning</th>
-                        <th></th>
+                        <th>{` `}</th>
                     </tr>
                 </thead>
                 <tbody>
