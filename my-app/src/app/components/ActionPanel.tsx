@@ -1,5 +1,6 @@
 'use client'
 import React, {useState, useEffect} from 'react';
+import ComplianceTable from './complianceTable';
 
 interface ActionPanelProps {
   appStage: number;
@@ -25,15 +26,15 @@ export default function ActionPanel(props: ActionPanelProps)  {
   
   const stage1 = (
     <section className="right-panel">
-      <h2>ActionPanel stage1</h2>
       <button onClick={()=>setPanelJSX(stage0)}>{`<- Stage 0`}</button>
       <button onClick={()=>setPanelJSX(stage2)}>{`Stage 2 ->`}</button>
+      <ComplianceTable/>
     </section>
   );
 
   const stage2 = (
     <section className="right-panel">
-      <h2>ActionPanel stage2</h2>
+      <h2>Document Rewriting Section</h2>
       <button onClick={()=>setPanelJSX(stage1)}>{`<- Stage 1`}</button>
     </section>
   );

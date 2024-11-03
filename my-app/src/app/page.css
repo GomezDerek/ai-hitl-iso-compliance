@@ -321,3 +321,10 @@ ul.file-list li:last-child {
 #upload-box img {
     animation: bounce 2s infinite; /* Apply the bounce animation */
 }
+
+/*************ISO Compliance Table************/
+.see-more-compliance {
+    cursor: default;
+    color: var(--green);
+    text-decoration: underline;
+}
