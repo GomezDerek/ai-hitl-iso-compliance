@@ -19,6 +19,7 @@ export default function Home() {
   const [uploadFileType, setUploadFileType] = useState<string>("");
   // eslint-disable-next-line
   const [appStage, setAppStage] = useState<number>(0);
+  const [generation, setGeneration] = useState({});
 
   useEffect(() => {
     const fetchFiles = async () => {
@@ -35,7 +36,7 @@ export default function Home() {
         body: JSON.stringify({ isoUri: "https://storage.googleapis.com/ait_nov_hackathon/ISOIEC 5055_Software quality measurement.pdf", companyDocUri: "https://storage.googleapis.com/ait_nov_hackathon/tinker/software_process.md" })
       });
       const jsonData = await data.json();
-      console.log(jsonData);
+      setGeneration(jsonData);
     }
     generate();
     fetchFiles();
