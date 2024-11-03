@@ -3,6 +3,7 @@ import './page.css';
 import File from './components/file';
 import React, { useState } from 'react';
 import UploadModal from './components/uploadModal';
+import ActionPanel from './components/ActionPanel';
 
 export default function Home() {
   
@@ -14,6 +15,7 @@ export default function Home() {
   const[selectedCorpus, setSelectedCorpus] = useState<string[]>([])
   const[isUploading, setIsUploading] = useState<boolean>(false);
   const[uploadFileType, setUploadFileType] = useState<string>("");
+  const[appStage, setAppStage] = useState<number>(0);
 
   function addFilesOnClick(fileType: string) {
     setIsUploading(true);
@@ -53,12 +55,7 @@ export default function Home() {
         
         </section>
 
-        <section id="right-panel">
-          <h2>Is your business ISO compliant?</h2>
-          <h4>Ensure your corpus files are in compliance with ISO's!</h4>
-          <p>Get started by uploading your corpus files and copies of the ISO regulations you need to comply with</p>
-          <button className="primary" onClick={()=>alert("Summon the AI agents")}>Check Compliance</button>
-        </section>
+        <ActionPanel />
 
       </main>
 

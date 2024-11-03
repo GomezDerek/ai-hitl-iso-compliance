@@ -121,7 +121,7 @@ ul.file-list {
 }
 
 /************************************************/
-#right-panel {
+.right-panel {
     grid-area: previewPanel;
 
     display: flex;
@@ -129,13 +129,13 @@ ul.file-list {
     text-align: center;
 }
 
-#right-panel > h2 {
+.right-panel > h2 {
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
 
 /* check compliance button */
-#right-panel > button {
+.right-panel > button {
     width: 10rem;
     margin: 1rem auto 0 auto;
 }
