@@ -20,6 +20,9 @@ export default function Home() {
   // eslint-disable-next-line
   const [appStage, setAppStage] = useState<number>(0);
 
+  const [complianceJudgements, setComplianceJudgements] = useState(undefined)
+
+
   function getLastElementAfterDelimiter(inputString: string) {
     const parts = inputString.split('/');
     return parts[parts.length - 1];
@@ -44,11 +47,15 @@ export default function Home() {
         body: JSON.stringify({ isoUri: "https://storage.googleapis.com/ait_nov_hackathon/ISOIEC 5055_Software quality measurement.pdf", companyDocUri: "https://storage.googleapis.com/ait_nov_hackathon/tinker/software_process.md" })
       });
       const jsonData = await data.json();
-      console.log(jsonData);
+      setComplianceJudgements(jsonData);
+      // console.log(jsonData);
     }
+    // generate();
     generate();
     fetchFiles();
   }, [])
+
+  console.log(complianceJudgements);
 
   function addFilesOnClick(fileType: string) {
     setIsUploading(true);
@@ -88,7 +95,7 @@ export default function Home() {
 
         </section>
 
-        <ActionPanel appStage={appStage} />
+        <ActionPanel appStage={appStage} complianceJudgements={complianceJudgements}/>
 
       </main>
 
