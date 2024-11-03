@@ -22,7 +22,7 @@ export default function ReasoningModal({ complianceDetails, onClickProp }: Props
                 <button className="x-button" onClick={onClickProp}>x</button>
                 <h2>{`${complianceDetails.iso} Compliance Details`}</h2>
                 <div className="reasoning-container">
-                    <p>{complianceDetails.reasoning}</p>
+                    <p className="p2">{complianceDetails.reasoning}</p>
                 </div>
             </div>
         </>

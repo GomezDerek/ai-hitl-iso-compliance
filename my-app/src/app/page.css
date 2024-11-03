@@ -302,6 +302,10 @@ ul.file-list li:last-child {
     font-size: var(--p2);
 }
 
+.reasoning-container p {
+    text-align: left;
+}
+
 #upload-box {
     position: relative;
     height: 5rem;
