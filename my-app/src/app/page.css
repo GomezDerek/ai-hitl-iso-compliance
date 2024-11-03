@@ -242,7 +242,8 @@ ul.file-list li:last-child {
     opacity: 0.4;
 }
 
-#upload-modal {
+/* #upload-modal { */
+.pop-up-modal {
     position: fixed;
     left: 50%;
     top: 50%;
@@ -255,7 +256,8 @@ ul.file-list li:last-child {
     opacity: 1;
 }
 
-#upload-modal .x-button {
+/* #upload-modal .x-button { */
+.pop-up-modal .x-button {
     position: absolute;
     right: 0;
     top: 0;
@@ -268,16 +270,19 @@ ul.file-list li:last-child {
     transition: 0.3s ease transform;
 }
 
-#upload-modal .x-button:hover {
+/* #upload-modal .x-button:hover { */
+.pop-up-modal .x-button:hover {
     transform: scale(1.3);
     color: red;
 }
 
-#upload-modal p {
+/* #upload-modal p { */
+.pop-up-modal p {
     text-align: center;
 }
 
-#upload-modal h2{
+/* #upload-modal h2{ */
+.pop-up-modal h2 {
     margin-bottom: 2rem;
 }
 
