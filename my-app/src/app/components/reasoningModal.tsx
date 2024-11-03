@@ -8,9 +8,11 @@ interface Props {
 }
 
 // eslint-disable-next-line
-export default function ReasoningModal(prop: string) {
+export default function ReasoningModal(props: Props) {
+
     return (
         <>
+            <p>{props.reasoning}</p>
         </>
     )
 }
