@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react';
+import React from 'react';
 
 interface UploadModalProps {
     onClickProp: () => void;
@@ -23,7 +23,7 @@ export default function UploadModal({ onClickProp, fileType }: UploadModalProps)
                     <input type="radio"></input>
                 </label> */}
                 <div id="upload-box" onClick={()=>alert("Trigger file explorer")}>
-                    <img src="upload-icon.svg" width="50px" height="50px"></img>
+                    <img src="upload-icon.svg" alt="bouncing upload icon" width="50px" height="50px"></img>
                     <p className="p2">.pdf</p>
                 </div>
             </div>
