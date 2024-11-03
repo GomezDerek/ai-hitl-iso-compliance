@@ -24,11 +24,12 @@ export default function ComplianceTable({judgements}: any) {
         return str.length > 55 ? str.substring(0, 55) + "..." : str;
     }
 
-    if(judgements == null) return (<div>loading...</div>)
-
+    if(judgements == null) {
+        return (<div>loading...</div>)
+    }
     // console.log(props.judgements.summary);
-    
-
+    else
+    {
     return (
         <>
             {modalOpen ? <ReasoningModal complianceDetails={selectedRow} onClickProp={()=>setModalOpen(false)}/> : null}
@@ -94,4 +95,5 @@ export default function ComplianceTable({judgements}: any) {
             </table>
         </>
     );
+    }
 }

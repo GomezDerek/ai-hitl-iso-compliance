@@ -27,8 +27,8 @@ export default function ActionPanel(props: ActionPanelProps)  {
   
   const stage1 = (
     <section className="right-panel">
-      <button onClick={()=>setPanelJSX(stage0)}>{`<- Stage 0`}</button>
-      <button onClick={()=>setPanelJSX(stage2)}>{`Stage 2 ->`}</button>
+      {/* <button onClick={()=>setPanelJSX(stage0)}>{`<- Stage 0`}</button>
+      <button onClick={()=>setPanelJSX(stage2)}>{`Stage 2 ->`}</button> */}
       <ComplianceTable judgements={props.complianceJudgements}/>
     </section>
   );
