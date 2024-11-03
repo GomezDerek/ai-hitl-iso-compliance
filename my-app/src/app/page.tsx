@@ -19,7 +19,11 @@ export default function Home() {
   const [uploadFileType, setUploadFileType] = useState<string>("");
   // eslint-disable-next-line
   const [appStage, setAppStage] = useState<number>(0);
-  const [generation, setGeneration] = useState({});
+
+  function getLastElementAfterDelimiter(inputString: string) {
+    const parts = inputString.split('/');
+    return parts[parts.length - 1];
+  }
 
   useEffect(() => {
     const fetchFiles = async () => {
@@ -27,16 +31,20 @@ export default function Home() {
       const jsonData = await data.json();
       const pdfFiles = jsonData.files.filter((file: string) => file.endsWith('.pdf'));
       const mdFiles = jsonData.files.filter((file: string) => file.endsWith('.md'));
-      setIsoFiles(pdfFiles);
-      setCorpusFiles(mdFiles);
+      setIsoFiles(pdfFiles.map((x: string) => getLastElementAfterDelimiter(x)));
+      setCorpusFiles(mdFiles.map((x: string) => getLastElementAfterDelimiter(x)));
+      // setIsoFiles(pdfFiles);
+      // setCorpusFiles(mdFiles);
     }
+
+
     const generate = async () => {
       const data = await fetch("/api/generate", {
         method: 'POST',
         body: JSON.stringify({ isoUri: "https://storage.googleapis.com/ait_nov_hackathon/ISOIEC 5055_Software quality measurement.pdf", companyDocUri: "https://storage.googleapis.com/ait_nov_hackathon/tinker/software_process.md" })
       });
       const jsonData = await data.json();
-      setGeneration(jsonData);
+      console.log(jsonData);
     }
     generate();
     fetchFiles();
