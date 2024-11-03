@@ -1,7 +1,14 @@
-// import Image from "next/image";
-import './page.css'
+'use client'
+import './page.css';
+import File from './file';
+import React, { useState } from 'react';
 
 export default function Home() {
+
+  const[isoFiles, setIsoFiles] = useState<string[]>(["ISO_file_1.pdf", "ISO_file_2.pdf", "ISO_file_3.pdf", "ISO_file_4.pdf"]);
+  const[corpusFiles, setCorpusFiles] = useState<string[]>(["Corpus_file_1.pdf", "Corpus_file_2.pdf"]);
+  const[selectedCorpus, setSelectedCorpus] = useState<string[]>([])
+
   return (
     // <div className={styles.page}>
     <div id="page">
@@ -21,9 +28,8 @@ export default function Home() {
             <p>ISO files</p>
             <button className="primary">+</button>
           </div>
-          <ul className="file-list">
-            <li>ISO_file_1.pdf</li>
-            <li>ISO_file_2.pdf</li>
+          <ul className="file-list" id="iso-file-list">
+            { isoFiles.map( (fileName, i) => <File name={fileName}/>) }
           </ul>
 
           <div className="file-section-header" id="corpus-files">
@@ -31,12 +37,7 @@ export default function Home() {
             <button className="primary">+</button>
           </div>
           <ul className="file-list">
-            <li>
-              Corpus_file_1.pdf 
-              {/* <input type="checkbox"></input>
-              <span className="checkmark"></span> */}
-            </li>
-            <li>Corpus_file_2.pdf</li>
+          { corpusFiles.map( (fileName, i) => <File name={fileName}/>) }
           </ul>
         
         </section>
