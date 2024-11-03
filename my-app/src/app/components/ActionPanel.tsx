@@ -14,18 +14,21 @@ const stage0 = (
   </section>
 );
 
+const stage1 = (<></>);
+const stage2 = (<></>);
+
 export default function ActionPanel(props: ActionPanelProps)  {    
-  const[panelJSX, setPanelJSX] = useState<number>(0);
+  const[panelJSX, setPanelJSX] = useState(stage0);
   
   switch(props.appStage) {
     case 0:
-      setPanelJSX(0);
+      setPanelJSX(stage0);
     case 1:
-      setPanelJSX(1);
+      setPanelJSX(stage1);
     case 2:
-      setPanelJSX(2);
+      setPanelJSX(stage2);
     default:
-      setPanelJSX(0);
+      setPanelJSX(stage0);
   }
 
   return(
