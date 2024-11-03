@@ -4,7 +4,8 @@ import File from './file';
 import React, { useState } from 'react';
 
 export default function Home() {
-
+  
+  // eslint-disable-next-line
   const[isoFiles, setIsoFiles] = useState<string[]>(["ISO_file_1.pdf", "ISO_file_2.pdf", "ISO_file_3.pdf", "ISO_file_4.pdf"]);
   // eslint-disable-next-line
   const[corpusFiles, setCorpusFiles] = useState<string[]>(["Corpus_file_1.pdf", "Corpus_file_2.pdf"]);
@@ -31,7 +32,7 @@ export default function Home() {
             <button className="primary">+</button>
           </div>
           <ul className="file-list" id="iso-file-list">
-            { isoFiles.map( (fileName, i) => <File name={fileName}/>) }
+            { isoFiles.map( (fileName, i) => <File name={fileName} key={i}/>) }
           </ul>
 
           <div className="file-section-header" id="corpus-files">
