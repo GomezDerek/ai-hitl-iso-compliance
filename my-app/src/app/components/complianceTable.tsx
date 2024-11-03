@@ -9,6 +9,7 @@ interface SelectedRow {
 
 export default function ComplianceTable() {
     const[modalOpen, setModalOpen] = useState<boolean>(false);
+    // eslint-disable-next-line
     const[selectedRow, setSelectedRow] = useState({iso: "", compliance: "", reasoning: ""});
 
     function seeMoreOnClick(iso: string, compliance: string, reasoning: string) {
