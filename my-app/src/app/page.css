@@ -7,13 +7,14 @@ body {
     --text-gray: gray;
     --p2: 0.8rem;
     --white-hover: #f5f5f5;
+    --bg-gray: #eee;
 }
 
 #page {
     height: 100vh;
 
     display: grid;
-    grid-template-rows: 1fr 8fr;
+    grid-template-rows: 1fr 9fr;
     grid-template-areas:
         "header"
         "main";
@@ -21,13 +22,24 @@ body {
 
 header {
     grid-area: header;
+
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    justify-content: flex-start;
+    align-items: center;
+    gap: 3rem;
+
+    padding: 0 0 0 0.3rem;
 }
 
 header > * {
     text-align: center;
+}
+
+header > h2#subtitle {
+    font-size: 1rem;
+    color: var(--text-gray);
 }
 
 main {
@@ -38,9 +50,18 @@ main {
     grid-template-areas:
         "filePanel previewPanel";
 
-    margin-top: 2rem;
+    /* margin-top: 2rem; */
     border: solid black;
     border-width: 2px 0 2px 0;
+}
+
+footer {
+    padding: 0.5rem 0 0.5rem 0;
+    text-align: center;
+}
+
+header, footer {
+    background-color: var(--bg-gray);
 }
 
 /*************************************************/

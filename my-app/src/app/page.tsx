@@ -28,8 +28,7 @@ export default function Home() {
       
         <header>
           <h1 id="title">ComPro</h1>
-          <h2>built for the AI Tinkerer's Human-in-the-Loop Hackathon</h2>
-          <p>by Sahil, Jeff, Andres, Derek</p>
+          <h2 id="subtitle">built for AI Tinkerers' 2024 AI Human-in-the-Loop Hackathon</h2>
         </header>
  
       <main>
@@ -56,14 +55,14 @@ export default function Home() {
 
         <section id="right-panel">
           <h2>Is your business ISO compliant?</h2>
-          <p>Ensure your selected corpus files are in compliance with the provided ISO's</p>
+          <p>Ensure your corpus files are in compliance with the provided ISO's</p>
           <button className="primary">Check Compliance</button>
         </section>
 
       </main>
 
-      {/* <footer className={styles.footer}> */}
       <footer>
+        <p className="p2">Made with ❤️ by Sahil, Jeff, Andres, and Derek</p>
       </footer>
     </div>
   );
