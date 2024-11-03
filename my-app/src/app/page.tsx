@@ -1,8 +1,8 @@
 'use client'
 import './page.css';
-import File from './file';
+import File from './components/file';
 import React, { useState } from 'react';
-import UploadModal from './uploadModal';
+import UploadModal from './components/uploadModal';
 
 export default function Home() {
   
@@ -12,7 +12,7 @@ export default function Home() {
   const[corpusFiles, setCorpusFiles] = useState<string[]>(["Corpus_file_1.pdf", "Corpus_file_2.pdf"]);
   // eslint-disable-next-line
   const[selectedCorpus, setSelectedCorpus] = useState<string[]>([])
-  const[isUploading, setIsUploading] = useState<boolean>(true);
+  const[isUploading, setIsUploading] = useState<boolean>(false);
   const[uploadFileType, setUploadFileType] = useState<string>("");
 
   function addFilesOnClick(fileType: string) {
